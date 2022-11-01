@@ -246,7 +246,8 @@ class FloatObject(decimal.Decimal, PdfObject):
         else:
             # Otherwise, format it with a decimal place, taking care to
             # remove any extraneous trailing zeros.
-            return f"{self:f}".rstrip("0")
+            # return f"{self:f}".rstrip("0")
+            return f"{self:.19f}".rstrip("0")
 
     def as_numeric(self) -> float:
         return float(repr(self).encode("utf8"))
